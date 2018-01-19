@@ -1,14 +1,14 @@
 //
-//  ViewController.m
+//  AboutViewController.m
 //  Labb1
 //
-//  Created by lösen är 0000 on 2018-01-12.
+//  Created by lösen är 0000 on 2018-01-19.
 //  Copyright © 2018 Petteri Tuononen. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "AboutViewController.h"
 
-@interface ViewController ()
+@interface AboutViewController ()
 @property (nonatomic) float amountRed;
 @property (nonatomic) float amountGreen;
 @property (nonatomic) float amountBlue;
@@ -17,11 +17,11 @@
 @property (nonatomic) float tintamountBlue;
 @end
 
-@implementation ViewController
+@implementation AboutViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
     NSUserDefaults *settings =[NSUserDefaults standardUserDefaults];
     self.amountRed = [settings floatForKey:@"bgColorRed"];
     self.amountGreen = [settings floatForKey:@"bgColorGreen"];
@@ -30,14 +30,12 @@
     self.tintamountGreen = [settings floatForKey:@"tintColorGreen"];
     self.tintamountBlue = [settings floatForKey:@"tintColorBlue"];
     
-    
     [self refresh];
-
 }
+
 -(void) refresh{
-    
+        self.view.tintColor = [self currentTintColor];
     self.view.backgroundColor = [self currentColor];
-    self.view.tintColor = [self currentTintColor];
 }
 
 - (UIColor*) currentColor{
@@ -54,13 +52,6 @@
                            alpha:1.0f];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [self.inputView reloadData];
-}
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -68,5 +59,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

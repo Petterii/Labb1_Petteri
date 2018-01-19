@@ -2,7 +2,7 @@
 //  main.m
 //  Labb1
 //
-//  Created by lösen är 0000 on 2018-01-12.
+//  Created by on 2018-01-12.
 //  Copyright © 2018 Petteri Tuononen. All rights reserved.
 //
 
